@@ -1,8 +1,8 @@
 # **eCRv3_1_Parser**
 
-https://img.shields.io/badge/License-MIT-green.svg](#license)
-https://img.shields.io/badge/Python-3.14+-blue.svg
-https://img.shields.io/badge/Status-Active-lightgrey.svg
+![https://img.shields.io/badge/License-MIT-green.svg](https://img.shields.io/badge/License-MIT-green.svg)
+![https://img.shields.io/badge/Python-3.14+-blue.svg](https://img.shields.io/badge/Python-3.14+-blue.svg)
+![https://img.shields.io/badge/Status-Active-lightgrey.svg](https://img.shields.io/badge/Status-Active-lightgrey.svg)
 
 ## Overview
 
