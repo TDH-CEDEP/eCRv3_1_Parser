@@ -176,7 +176,50 @@ If you'd like more (code coverage, tests, Docker builds), I can add them.
 
 ---
 
-## Final Question
+## Flow Diagram
 
-Would you like a small example diagram of the workflow added to the README  
-(e.g., "ZIP → Extract → Parse CDA → CSV")?
+             Daily ZIP Delivery (from EHR/HIE)
+                             │
+                             ▼
+                ┌────────────────────────┐
+                │   Date-Based Folder    │
+                │   <YYYY>/<YYYYMM>/     │
+                │   <YYYYMMDD>/          │
+                └────────────────────────┘
+                             │
+                             ▼
+                ┌────────────────────────┐
+                │     ZIP Extraction      │
+                │   (extract_location)    │
+                └────────────────────────┘
+                             │
+                             ▼
+                ┌────────────────────────┐
+                │     CDA_eICR.xml       │
+                │   Loaded via lxml.etree│
+                └────────────────────────┘
+                             │
+                             ▼
+                ┌────────────────────────┐
+                │     XML Parsing        │
+                │  300+ HL7 CDA fields   │
+                │  (patient, provider,   │
+                │   encounter, labs,     │
+                │   occupation, etc.)    │
+                └────────────────────────┘
+                             │
+                             ▼
+                ┌────────────────────────┐
+                │   Row Assembly         │
+                │   Python CSV writer    │
+                └────────────────────────┘
+                             │
+                             ▼
+                ┌────────────────────────┐
+                │   Output CSV File      │
+                │ <output_path>/<date>   │
+                │     _zip.csv           │
+                └────────────────────────┘
+                             │
+                             ▼
+         Ready for Epidemiology / Public Health Analysis
